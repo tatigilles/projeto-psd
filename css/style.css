@@ -19,43 +19,133 @@ a:hover {
 p {
   font-family: "Noto Sans"; }
 
+/* floats */
+.float-l {
+  float: left; }
+
+.float-r {
+  float: right; }
+
 header {
-  width: 100%;
-  position: absolute;
+  min-height: 60px;
+  position: fixed;
   top: 0;
+  right: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 50px;
-  background-color: rgba(0, 0, 0, 0); }
+  z-index: 2;
+  padding: 30px 50px; }
+  header .list-auto li {
+    width: 100%;
+    float: left;
+    display: block;
+    position: relative; }
+  header .list-auto, header .list-auto li {
+    width: auto; }
+  header .float-l {
+    float: left; }
+  header .float-r {
+    float: right; }
+  header ul {
+    padding: 15px 10px 0 0; }
+    header ul li {
+      padding: 0 15px; }
+      header ul li a {
+        display: block;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 30px;
+        text-decoration: none;
+        -webkit-transition: all 300ms ease;
+        transition: all 300ms ease; }
+        header ul li a:hover {
+          color: #e86b62; }
+      header ul li:first-child {
+        padding-left: 0; }
+      header ul li:last-child {
+        padding-right: 50px; }
+  header input#control-nav {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    opacity: 0; }
   header img {
     width: 150px;
-    padding-left: 50px; }
-  header nav {
-    display: flex; }
-  header li {
-    margin: 0 15px; }
-    header li a {
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: bold; }
-      header li a:hover {
-        color: #e86b62; }
-    header li:first-child {
-      margin-left: 0; }
-    header li:last-child {
-      margin-right: 50px; }
-  @media (max-width: 700px) {
-    header {
-      max-width: 100%;
-      flex-direction: column; }
-      header img {
-        margin-bottom: 20px; }
-      header nav {
-        display: none; } }
+    padding: 15px 0 0 50px; }
 
+@media screen and (max-width: 767px) {
+  header {
+    /* checked nav */ }
+    header nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 250px;
+      border-left: 1px solid #817a7a;
+      background-color: #000;
+      overflow-x: auto;
+      z-index: 2;
+      -webkit-transition: all 500ms ease;
+      transition: all 500ms ease;
+      -webkit-transform: translate(100%, 0);
+      -ms-transform: translate(100%, 0);
+      transform: translate(100%, 0); }
+    header ul.list-auto {
+      padding: 0; }
+    header ul.list-auto li {
+      width: 100%;
+      border: solid #ccc;
+      border-width: 0 0 1px; }
+    header ul li a {
+      padding: 15px 10px; }
+    header .control-nav {
+      /* label icon */
+      position: absolute;
+      right: 20px;
+      top: 40px;
+      display: block;
+      width: 30px;
+      padding: 5px 0;
+      border: solid #fff;
+      border-width: 3px 0;
+      z-index: 2;
+      cursor: pointer; }
+    header .control-nav:before {
+      content: "";
+      display: block;
+      height: 3px;
+      background: #fff; }
+    header .control-nav-close {
+      position: fixed;
+      /* label layer */
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.4);
+      -webkit-transition: all 500ms ease;
+      transition: all 500ms ease;
+      -webkit-transform: translate(100%, 0);
+      -ms-transform: translate(100%, 0);
+      transform: translate(100%, 0); }
+    header input#control-nav {
+      display: block; }
+    header input#control-nav:focus ~ .control-nav {
+      border-color: #000;
+      box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.3); }
+    header input#control-nav:focus ~ .control-nav:before {
+      background: #000; }
+    header input#control-nav:checked ~ nav,
+    header input#control-nav:checked ~ .control-nav-close {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0); }
+    header img {
+      padding: 0; } }
 .hero {
   background-image: url(../img/background.png);
   background-size: cover;
@@ -204,7 +294,9 @@ header {
 @media (max-width: 850px) {
   .expertise {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px; }
     .expertise__title {
       max-width: 100%;
       padding: 0;
@@ -223,7 +315,7 @@ header {
           .expertise__title-icons-list li {
             margin-top: 35px; }
             .expertise__title-icons-list li:first-child {
-              padding: 0;
+              padding: 0 30px;
               margin-top: 0; }
             .expertise__title-icons-list li h3 {
               text-align: center; }
@@ -279,7 +371,9 @@ header {
     background-image: none;
     display: flex;
     flex-direction: column;
-    max-width: 100%; }
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px; }
     .portfolio__lat1 {
       width: 100%;
       padding-left: 0;
@@ -287,7 +381,7 @@ header {
       .portfolio__lat1 h1 {
         font-size: 25px; }
       .portfolio__lat1-list li p {
-        padding: 0; }
+        padding: 0 30px; }
 
   .portimagens, .portimagens2 {
     flex-direction: column;
@@ -389,7 +483,7 @@ header {
         .sobre__julho--text {
           max-width: 100%;
           text-align: center;
-          padding-right: 0; }
+          padding: 0 30px; }
           .sobre__julho--text h2 {
             font-size: 16px;
             margin: 35px 0 30px; }
@@ -400,7 +494,7 @@ header {
         .sobre__agosto--text {
           max-width: 100%;
           text-align: center;
-          padding-right: 0px; }
+          padding: 0 30px; }
           .sobre__agosto--text h2 {
             margin: 35px 0 30px; } }
 
@@ -461,7 +555,7 @@ header {
       .time__pessoas--1 i {
         width: 15%;
         height: 10%;
-        background: #000;
+        background-color: #000;
         color: #fff;
         border-radius: 100%;
         padding-top: 8px;
@@ -488,6 +582,11 @@ header {
       .time__pessoas--1 {
         padding-right: 0;
         margin-bottom: 35px; }
+        .time__pessoas--1 i {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          padding: 15px; }
         .time__pessoas--1:last-child {
           margin-bottom: 0; } }
 .rodape {
@@ -610,6 +709,6 @@ header {
           width: 100%;
           justify-content: center;
           margin: 0;
-          padding: 10px; } }
+          padding: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

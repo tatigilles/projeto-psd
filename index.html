@@ -16,13 +16,33 @@
 <body>
     <header>
         <a href="#"><img src="img/dreams.png" alt="Logo Dreams"></a>
-        <nav>
-            <li><a href="#" >Home </a></li>
-            <li><a href="#" >Serviços </a></li>
-            <li><a href="#" >Sobre</a></li>
-            <li><a href="#" >Portfolio</a></li>
-            <li><a href="#" >Contato</a></li>
-        </nav>
+
+      <input type="checkbox" id="control-nav" />
+      <label for="control-nav" class="control-nav"></label>
+      <label for="control-nav" class="control-nav-close"></label>
+
+      <nav class="float-r">
+        <ul class="list-auto">
+          <li>
+            <a href="index.html" title="Home">Home</a>
+          </li>
+          <li>
+            <a href="#servico" title="Serviços">Serviços</a>
+          </li>
+          <li>
+            <a href="#sobre" title="Sobre">Sobre</a>
+          </li>
+          <li>
+            <a href="#portfolio" title="Portifolio">Portfólio</a>
+          </li>
+          <li>
+            <a href="#time" title="Time">Time</a>
+          </li>
+          <li>
+            <a href="#contato" title="Contato">Contato</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <section class="hero">
             <h1>Construa o site dos <br>seus sonhos</h1>
@@ -30,7 +50,7 @@
             <p>Somos uma agência digital que acredita na construção<br> de coisas que são significativas!</p>
     </section>
 
-    <section class="services">
+    <section class="services" id="servico">
             <h1>serviços essenciais</h1>
             <hr>            
 
@@ -95,7 +115,7 @@
         <div class="expertise__back">
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="portfolio__lat1">
             <div class="portfolio__lat1-text">
             <h1>Portfólio Incrível</h1>
@@ -142,7 +162,7 @@
             <img src="img/Image-6.png" alt="">
         </div>
     </section>
-    <section class="sobre">
+    <section class="sobre" id="sobre">
         <div class="sobre__title">
             <h1>Sobre Nós</h1>
             <hr>
@@ -212,7 +232,7 @@
             
         </div>
     </section>
-    <section class="time">
+    <section class="time" id="time">
         <div class="time__title">
             <h1>Equipe Incrível</h1>
             <hr>
@@ -247,7 +267,7 @@
                 aenean rhoncus posuere odio in tincidunt proin iaculis.</p> 
         </div>
     </section>
-    <footer class="rodape">
+    <footer class="rodape" id="contato">
         <div class="rodape__contact">
             <div class="rodape__contact--title">
                 <h1>Contato</h1>
@@ -291,5 +311,17 @@
             <p>© 2014 Dreams By FreebiesXpress</p>
         </div>
     </footer>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+            /* SCRIPT JQUERY PARA TROCAR DE COR NAVBAR */
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 600) {
+                    $('header').css("background-color", "rgb(38, 38, 38,0.5)")
+                } else {
+                    $('header').css("background-color", "transparent")
+                }
+            });
+        </script>
 </body>
 </html>
