@@ -117,7 +117,7 @@
                 </ul>
         </div>
         <div class="expertise__button">
-            <a class="btn-whats" href="https://api.whatsapp.com/send?phone=5511973812220&text=TESTANDO" target="_blank" onclick="ga('send', 'event', 'telefone', 'botao');">saiba mais</a>
+            <a class="btn-whats" href="https://api.whatsapp.com/send?phone=5511973812220&text=TESTANDO" target="_blank">saiba mais</a>
         </div>
         </div>
         <div class="expertise__back">
@@ -331,5 +331,22 @@
                 }
             });
         </script>
+
+<script>
+    jQuery(document).ready(function(){
+        jQuery(".btn-route").click(function(){
+            ga('send', 'event', 'Traçar Rota', 'Waze', 'Botão de tracar rota');
+        });
+       jQuery(".btn-uber").click(function(){
+            ga('send', 'event', 'Chamar Uber', 'Uber', 'Botão de chamar uber');
+        });
+       jQuery(".btn-whats").click(function(){
+            ga('send', 'event', 'Ligar no Motel', 'Ligar', 'Botão de ligar');
+        });
+       jQuery(".btn-reservas").click(function(){
+            ga('send', 'event', 'Reservas', 'Ligar', 'Botão de reservas');
+        });
+    });
+ </script>
 </body>
 </html>
