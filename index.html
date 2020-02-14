@@ -19,28 +19,9 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-158542483-1');
-
-    var trackOutboundLink = function(action) {
-        gtag('event', action, {
-          'event_category': 'UX-Action',
-          'event_label': 'Clique',
-          'transport_type': 'beacon'
-        });
-      }
   </script>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TMD75JP');</script>
-    <!-- End Google Tag Manager -->
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD75JP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header>
         <a href="#"><img src="img/dreams.png" alt="Logo Dreams"></a>
 
@@ -136,7 +117,7 @@
                 </ul>
         </div>
         <div class="expertise__button">
-            <a class="btn-whats" href="https://api.whatsapp.com/send?phone=5511973812220&text=TESTANDO" target="_blank" onclick="trackOutboundLink('Whatsapp')">saiba mais</a>
+            <a class="btn-whats" href="https://api.whatsapp.com/send?phone=5511973812220&text=TESTANDO" target="_blank" onclick="ga('send', 'event', 'Category', 'click', 'Label', 'Value');">saiba mais</a>
         </div>
         </div>
         <div class="expertise__back">
